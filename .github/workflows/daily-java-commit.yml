@@ -7,7 +7,7 @@ on:
   workflow_dispatch: {}   # lets you run it by hand from the Actions tab
 
 permissions:
-  contents: write
+  contents: write         # lets the built-in GITHUB_TOKEN push; no secrets needed
 
 concurrency:
   group: daily-java-commit
@@ -19,9 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          # Optional: set a GH_PAT secret to push as yourself. Falls back to the built-in token.
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Set up JDK 17 (OpenJDK build)
         uses: actions/setup-java@v4
@@ -30,9 +27,6 @@ jobs:
           java-version: "17"
 
       - name: Pick today's 2 programs
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
         run: java tools/DailyPublisher.java .
 
       - name: Compile and run the new programs
