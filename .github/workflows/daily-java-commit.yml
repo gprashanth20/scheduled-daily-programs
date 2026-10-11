@@ -1,0 +1,60 @@
+name: Daily Java DSA commit
+
+on:
+  schedule:
+    # GitHub cron is always UTC. 12:30 UTC = 18:00 IST.
+    - cron: "30 12 * * *"
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-java-commit
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Optional: set a GH_PAT secret to push as yourself. Falls back to the built-in token.
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Set up JDK 17 (OpenJDK build)
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Pick today's 2 programs
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }}
+        run: java tools/DailyPublisher.java .
+
+      - name: Compile and run the new programs
+        run: |
+          set -e
+          files=$(git ls-files --others --exclude-standard -- 'solutions/*.java')
+          if [ -z "$files" ]; then echo "No new programs."; exit 0; fi
+          for f in $files; do
+            echo "=== $f"
+            out=$(mktemp -d)
+            javac -d "$out" "$f"
+            java -ea -cp "$out" "$(basename "${f%.java}")"
+          done
+
+      - name: Commit and push
+        env:
+          GIT_USER_NAME: ${{ vars.GIT_USER_NAME || github.repository_owner }}
+          GIT_USER_EMAIL: ${{ vars.GIT_USER_EMAIL || format('{0}@users.noreply.github.com', github.repository_owner) }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Nothing to commit."; exit 0; fi
+          git config user.name  "$GIT_USER_NAME"
+          git config user.email "$GIT_USER_EMAIL"
+          git add -A
+          git commit -m "Add daily DSA programs for $(TZ=Asia/Kolkata date +%F)"
+          git push
