@@ -14,3 +14,4 @@
 | 2026-10-22 | ConsistentHashRing | TokenBucketRateLimiter |
 | 2026-10-23 | DijkstraShortestPath | LFUCache |
 | 2026-10-24 | WordSearchTrie | LazySegmentTree |
+| 2026-10-25 | KruskalMST | EditDistanceAndLCS |
