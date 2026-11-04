@@ -22,3 +22,4 @@
 | 2026-11-01 | LowestCommonAncestorBinaryLifting | InversionCountFenwick |
 | 2026-11-03 | DinicMaxFlow | TrappingRainWater2D |
 | 2026-11-04 | ConsistentHashRing | TokenBucketRateLimiter |
+| 2026-11-05 | DijkstraShortestPath | LFUCache |
