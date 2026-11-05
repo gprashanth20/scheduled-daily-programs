@@ -23,3 +23,4 @@
 | 2026-11-03 | DinicMaxFlow | TrappingRainWater2D |
 | 2026-11-04 | ConsistentHashRing | TokenBucketRateLimiter |
 | 2026-11-05 | DijkstraShortestPath | LFUCache |
+| 2026-11-06 | WordSearchTrie | LazySegmentTree |
