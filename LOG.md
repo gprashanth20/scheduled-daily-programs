@@ -25,3 +25,4 @@
 | 2026-11-05 | DijkstraShortestPath | LFUCache |
 | 2026-11-06 | WordSearchTrie | LazySegmentTree |
 | 2026-11-07 | KruskalMST | EditDistanceAndLCS |
+| 2026-11-08 | TopologicalBuildOrder | MedianOfTwoSortedArrays |
