@@ -26,3 +26,4 @@
 | 2026-11-06 | WordSearchTrie | LazySegmentTree |
 | 2026-11-07 | KruskalMST | EditDistanceAndLCS |
 | 2026-11-08 | TopologicalBuildOrder | MedianOfTwoSortedArrays |
+| 2026-11-10 | KmpAndRabinKarp | NQueensBitmask |
