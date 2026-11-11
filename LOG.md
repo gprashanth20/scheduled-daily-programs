@@ -28,3 +28,4 @@
 | 2026-11-08 | TopologicalBuildOrder | MedianOfTwoSortedArrays |
 | 2026-11-10 | KmpAndRabinKarp | NQueensBitmask |
 | 2026-11-11 | MonotonicDequeAndStack | TarjanSCC |
+| 2026-11-12 | LRUCacheLinkedList | KnapsackAndCoinChange |
