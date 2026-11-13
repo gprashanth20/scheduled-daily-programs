@@ -30,3 +30,4 @@
 | 2026-11-11 | MonotonicDequeAndStack | TarjanSCC |
 | 2026-11-12 | LRUCacheLinkedList | KnapsackAndCoinChange |
 | 2026-11-13 | LowestCommonAncestorBinaryLifting | InversionCountFenwick |
+| 2026-11-14 | DinicMaxFlow | TrappingRainWater2D |
