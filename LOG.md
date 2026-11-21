@@ -37,3 +37,4 @@
 | 2026-11-19 | KruskalMST | EditDistanceAndLCS |
 | 2026-11-20 | TopologicalBuildOrder | MedianOfTwoSortedArrays |
 | 2026-11-21 | KmpAndRabinKarp | NQueensBitmask |
+| 2026-11-22 | MonotonicDequeAndStack | TarjanSCC |
