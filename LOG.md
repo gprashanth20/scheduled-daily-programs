@@ -39,3 +39,4 @@
 | 2026-11-21 | KmpAndRabinKarp | NQueensBitmask |
 | 2026-11-22 | MonotonicDequeAndStack | TarjanSCC |
 | 2026-11-23 | LRUCacheLinkedList | KnapsackAndCoinChange |
+| 2026-11-24 | LowestCommonAncestorBinaryLifting | InversionCountFenwick |
