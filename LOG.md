@@ -41,3 +41,4 @@
 | 2026-11-23 | LRUCacheLinkedList | KnapsackAndCoinChange |
 | 2026-11-24 | LowestCommonAncestorBinaryLifting | InversionCountFenwick |
 | 2026-11-25 | DinicMaxFlow | TrappingRainWater2D |
+| 2026-11-26 | ConsistentHashRing | TokenBucketRateLimiter |
